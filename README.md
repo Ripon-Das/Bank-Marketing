@@ -56,7 +56,7 @@ Compared both variants on Accuracy, Precision, Recall, F1, and ROC-AUC. Plotted 
 6. **Weighted model trade-off** — it recovers substantially more true positives (higher recall) while giving up only a modest amount of precision, making it the better choice when missing a potential subscriber is costly.
 7. **Consistent across folds** — cross-validation scores exhibit low variance, confirming the model is not over-fitting.
 
-Execution & Files
+# Execution & Files
 A typical project structure includes:
 
 data/: Contains bank.csv or bank-full.csv.
