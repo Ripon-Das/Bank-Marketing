@@ -2,7 +2,9 @@
 
 ## Objective
 
-Banks invest heavily in telemarketing to promote term deposits. This project applies **Logistic Regression** to historical campaign data so that the bank can estimate, in advance, which customers are most likely to open a term deposit.
+The primary goal is to classify customers into two categories: those who will subscribe to a term deposit (Yes) and those who will not (No).
+
+Business Impact: By identifying high-potential customers, banks can optimize telemarketing efforts, reduce operational costs, and increase the conversion rate of their marketing campaigns
 
 ## Dataset Details
 
@@ -72,7 +74,8 @@ Compared both variants on Accuracy, Precision, Recall, F1, and ROC-AUC. Plotted 
 pip install -r requirements.txt
 python term_deposit_analysis.py
 ```
-
+# Conclusion
+Logistic Regression provides a solid baseline for predicting bank term deposit uptake due to its interpretability. While "Duration" is the most significant feature, it is technically a "post-hoc" feature (you only know it after the call). For a truly predictive business model, focusing on demographics and economic indicators allows the bank to filter their call list before dialing a single number
 Charts are written to the `images/` directory automatically.
 
 ## Libraries Used
