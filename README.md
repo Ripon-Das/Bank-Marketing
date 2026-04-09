@@ -56,7 +56,8 @@ Compared both variants on Accuracy, Precision, Recall, F1, and ROC-AUC. Plotted 
 6. **Weighted model trade-off** — it recovers substantially more true positives (higher recall) while giving up only a modest amount of precision, making it the better choice when missing a potential subscriber is costly.
 7. **Consistent across folds** — cross-validation scores exhibit low variance, confirming the model is not over-fitting.
 
-# Execution & Files
+## Execution & Files
+
 A typical project structure includes:
 
 data/: Contains bank.csv or bank-full.csv.
@@ -70,14 +71,21 @@ model/: Saved model file (e.g., logistic_model.pkl).
 
 ## Libraries Used
 
-import pandas as pd             # Data manipulation
-import numpy as np              # Numerical operations
-import matplotlib.pyplot as plt # Data visualization
-import seaborn as sns           # Advanced visualization
+import pandas as pd  
+
+import numpy as np  
+
+import matplotlib.pyplot as plt 
+
+import seaborn as sns    
+
 from sklearn.model_selection import train_test_split
+
 from sklearn.linear_model import LogisticRegression
+
 from sklearn.metrics import confusion_matrix, classification_report
-from imblearn.over_sampling import SMOTE # For handling class imbalance
+
+from imblearn.over_sampling import SMOTE 
 
 # Conclusion
 Logistic Regression provides a solid baseline for predicting bank term deposit uptake due to its interpretability. While "Duration" is the most significant feature, it is technically a "post-hoc" feature (you only know it after the call). For a truly predictive business model, focusing on demographics and economic indicators allows the bank to filter their call list before dialing a single number
