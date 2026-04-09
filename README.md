@@ -56,28 +56,29 @@ Compared both variants on Accuracy, Precision, Recall, F1, and ROC-AUC. Plotted 
 6. **Weighted model trade-off** — it recovers substantially more true positives (higher recall) while giving up only a modest amount of precision, making it the better choice when missing a potential subscriber is costly.
 7. **Consistent across folds** — cross-validation scores exhibit low variance, confirming the model is not over-fitting.
 
-## Files
+Execution & Files
+A typical project structure includes:
 
-```
-.
-├── bank-data/
-│   └── bank-full.csv               # Source data
-├── term_deposit_analysis.py         # Full analysis script
-├── requirements.txt                 # pip dependencies
-├── README.md                        # Documentation
-└── images/                          # Generated charts (after running)
-```
+data/: Contains bank.csv or bank-full.csv.
 
-## Execution
+notebooks/: Jupyter notebook (Predict_Term_Deposit.ipynb) containing the code and visualizations.
 
-```bash
-pip install -r requirements.txt
-python term_deposit_analysis.py
-```
-# Conclusion
-Logistic Regression provides a solid baseline for predicting bank term deposit uptake due to its interpretability. While "Duration" is the most significant feature, it is technically a "post-hoc" feature (you only know it after the call). For a truly predictive business model, focusing on demographics and economic indicators allows the bank to filter their call list before dialing a single number
-Charts are written to the `images/` directory automatically.
+requirements.txt: List of dependencies.
+
+model/: Saved model file (e.g., logistic_model.pkl).
+
 
 ## Libraries Used
 
-Python 3.8+, pandas, numpy, matplotlib, seaborn, scikit-learn
+import pandas as pd             # Data manipulation
+import numpy as np              # Numerical operations
+import matplotlib.pyplot as plt # Data visualization
+import seaborn as sns           # Advanced visualization
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix, classification_report
+from imblearn.over_sampling import SMOTE # For handling class imbalance
+
+# Conclusion
+Logistic Regression provides a solid baseline for predicting bank term deposit uptake due to its interpretability. While "Duration" is the most significant feature, it is technically a "post-hoc" feature (you only know it after the call). For a truly predictive business model, focusing on demographics and economic indicators allows the bank to filter their call list before dialing a single number
+Charts are written to the `images/` directory automatically.
